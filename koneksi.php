@@ -2,8 +2,8 @@
 // 1. Definisikan identitas database
 $host = "localhost";
 $user = "root";
-$pass = "";
-$db   = "login_sistem"; // <--- PASTIKAN NAMA INI SAMA DENGAN DI PHPMYADMIN
+$pass = "root";
+$db   = "login sistem"; // <--- PASTIKAN NAMA INI SAMA DENGAN DI PHPMYADMIN
 
 // 2. Buat koneksi dan simpan ke variabel $conn
 $conn = mysqli_connect($host, $user, $pass, $db);

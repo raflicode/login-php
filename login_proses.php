@@ -6,13 +6,13 @@ if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'");
 
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         
         // Pastikan password di database sudah di-hash pakai password_hash()
-        if (password_verify($password, $row['password'])) {
+        if (password_verify($password, $row['pass'])) {
             $_SESSION['login'] = true;
             $_SESSION['user_id'] = $row['id'];
             
